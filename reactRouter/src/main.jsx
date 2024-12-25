@@ -11,7 +11,7 @@ import Home from "./components/home/Home";
 import About from "./components/about/About";
 import App from "./App";
 import User from "./components/user/User";
-import Github from "./components/github/Github";
+import Github, { githubInfoLoader } from "./components/github/Github";
 
 // const router = createBrowserRouter([
 //   {
@@ -35,7 +35,7 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="user/:userid" element={<User />} />
-      <Route path="github" element={<Github />} />
+      <Route loader={githubInfoLoader} path="github" element={<Github />} />
     </Route>
   )
 );
